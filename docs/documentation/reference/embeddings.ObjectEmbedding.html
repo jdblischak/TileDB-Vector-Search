@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index</title>
+<title>embeddings.objectembedding</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../documentation/storage-format-spec.html" rel="prev">
 <link href="../../documentation/assets/tiledb.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/reference/index.html">API Reference</a></li><li class="breadcrumb-item"><a href="../../documentation/reference/index.html">Python</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -164,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/reference/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../documentation/reference/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
@@ -180,95 +179,124 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#python" id="toc-python" class="nav-link active" data-scroll-target="#python">Python</a>
+  <li><a href="#tiledb.vector_search.embeddings.ObjectEmbedding" id="toc-tiledb.vector_search.embeddings.ObjectEmbedding" class="nav-link active" data-scroll-target="#tiledb.vector_search.embeddings.ObjectEmbedding">embeddings.ObjectEmbedding</a>
   <ul class="collapse">
-  <li><a href="#vector-api" id="toc-vector-api" class="nav-link" data-scroll-target="#vector-api">Vector API</a>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
-  <li><a href="#algorithms" id="toc-algorithms" class="nav-link" data-scroll-target="#algorithms">Algorithms</a></li>
+  <li><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.dimensions" id="toc-tiledb.vector_search.embeddings.ObjectEmbedding.dimensions" class="nav-link" data-scroll-target="#tiledb.vector_search.embeddings.ObjectEmbedding.dimensions">dimensions</a></li>
+  <li><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.embed" id="toc-tiledb.vector_search.embeddings.ObjectEmbedding.embed" class="nav-link" data-scroll-target="#tiledb.vector_search.embeddings.ObjectEmbedding.embed">embed</a></li>
+  <li><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.init_kwargs" id="toc-tiledb.vector_search.embeddings.ObjectEmbedding.init_kwargs" class="nav-link" data-scroll-target="#tiledb.vector_search.embeddings.ObjectEmbedding.init_kwargs">init_kwargs</a></li>
+  <li><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.load" id="toc-tiledb.vector_search.embeddings.ObjectEmbedding.load" class="nav-link" data-scroll-target="#tiledb.vector_search.embeddings.ObjectEmbedding.load">load</a></li>
+  <li><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.vector_type" id="toc-tiledb.vector_search.embeddings.ObjectEmbedding.vector_type" class="nav-link" data-scroll-target="#tiledb.vector_search.embeddings.ObjectEmbedding.vector_type">vector_type</a></li>
   </ul></li>
-  <li><a href="#object-api" id="toc-object-api" class="nav-link" data-scroll-target="#object-api">Object API</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/edit/main/documentation/reference/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/edit/main/documentation/reference/embeddings.ObjectEmbedding.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/reference/index.html">API Reference</a></li><li class="breadcrumb-item"><a href="../../documentation/reference/index.html">Python</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="python" class="level1">
-<h1>Python</h1>
-<section id="vector-api" class="level2">
-<h2 class="anchored" data-anchor-id="vector-api">Vector API</h2>
+<section id="tiledb.vector_search.embeddings.ObjectEmbedding" class="level1">
+<h1>embeddings.ObjectEmbedding</h1>
+<p><code>vector_search.embeddings.ObjectEmbedding()</code></p>
+<p>Abstract class that can be used to create embeddings for Objects of a specific format.</p>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><a href="../../documentation/reference/open.html#tiledb.vector_search.open">open</a></td>
-<td>Factory method that opens a vector index.</td>
+<td><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.dimensions">dimensions</a></td>
+<td>Returns the number of dimensions of the embedding vectors.</td>
 </tr>
 <tr class="even">
-<td><a href="../../documentation/reference/ingestion.html#tiledb.vector_search.ingestion">ingestion</a></td>
-<td>Vector Search ingestion Utilities</td>
+<td><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.embed">embed</a></td>
+<td>Creates embedding vectors for objects. Returns a numpy array of embedding vectors.</td>
 </tr>
 <tr class="odd">
-<td><a href="../../documentation/reference/index.Index.html#tiledb.vector_search.index.Index">index.Index</a></td>
-<td>Abstract Vector Index class.</td>
+<td><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.init_kwargs">init_kwargs</a></td>
+<td>Returns a dictionary containing kwargs that can be used to re-initialize the ObjectEmbedding.</td>
+</tr>
+<tr class="even">
+<td><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.load">load</a></td>
+<td>Loads the model in order to be ready for embedding objects.</td>
+</tr>
+<tr class="odd">
+<td><a href="#tiledb.vector_search.embeddings.ObjectEmbedding.vector_type">vector_type</a></td>
+<td>Returns the datatype of the embedding vectors.</td>
 </tr>
 </tbody>
 </table>
-<section id="algorithms" class="level3">
-<h3 class="anchored" data-anchor-id="algorithms">Algorithms</h3>
+<section id="tiledb.vector_search.embeddings.ObjectEmbedding.dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="tiledb.vector_search.embeddings.ObjectEmbedding.dimensions">dimensions</h3>
+<p><code>vector_search.embeddings.ObjectEmbedding.dimensions()</code></p>
+<p>Returns the number of dimensions of the embedding vectors.</p>
+</section>
+<section id="tiledb.vector_search.embeddings.ObjectEmbedding.embed" class="level3">
+<h3 class="anchored" data-anchor-id="tiledb.vector_search.embeddings.ObjectEmbedding.embed">embed</h3>
+<p><code>vector_search.embeddings.ObjectEmbedding.embed(objects, metadata)</code></p>
+<p>Creates embedding vectors for objects. Returns a numpy array of embedding vectors. There is no enforced restriction on the object format. ObjectReaders and ObjectEmbeddings should use compatible object and metadata formats.</p>
+<section id="parameters" class="level4">
+<h4 class="anchored" data-anchor-id="parameters">Parameters</h4>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 73%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><a href="../../documentation/reference/flat_index.html#tiledb.vector_search.flat_index">flat_index</a></td>
-<td>FlatIndex implementation.</td>
+<td><code>objects</code></td>
+<td>OrderedDict</td>
+<td>An OrderedDict, containing the object data, having structure similar to TileDB-Py read results.</td>
+<td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><a href="../../documentation/reference/ivf_flat_index.html#tiledb.vector_search.ivf_flat_index">ivf_flat_index</a></td>
-<td>IVFFlat Index implementation.</td>
-</tr>
-<tr class="odd">
-<td><a href="../../documentation/reference/vamana_index.html#tiledb.vector_search.vamana_index">vamana_index</a></td>
-<td>Vamana Index implementation.</td>
-</tr>
-<tr class="even">
-<td><a href="../../documentation/reference/ivf_pq_index.html#tiledb.vector_search.ivf_pq_index">ivf_pq_index</a></td>
-<td>IVFPQ Index implementation.</td>
+<td><code>metadata</code></td>
+<td>OrderedDict</td>
+<td>An OrderedDict, containing the object metadata, having structure similar to TileDB-Py read results.</td>
+<td><em>required</em></td>
 </tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="object-api" class="level2">
-<h2 class="anchored" data-anchor-id="object-api">Object API</h2>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../../documentation/reference/object_api.create.html#tiledb.vector_search.object_api.create">object_api.create</a></td>
-<td>Creates a new ObjectIndex.</td>
-</tr>
-<tr class="even">
-<td><a href="../../documentation/reference/object_api.ObjectIndex.html#tiledb.vector_search.object_api.ObjectIndex">object_api.ObjectIndex</a></td>
-<td>An ObjectIndex represents a TileDB Vector Search index that is associated with a</td>
-</tr>
-<tr class="odd">
-<td><a href="../../documentation/reference/embeddings.ObjectEmbedding.html#tiledb.vector_search.embeddings.ObjectEmbedding">embeddings.ObjectEmbedding</a></td>
-<td>Abstract class that can be used to create embeddings for Objects of a specific format.</td>
-</tr>
-<tr class="even">
-<td><a href="../../documentation/reference/object_readers.ObjectReader.html#tiledb.vector_search.object_readers.ObjectReader">object_readers.ObjectReader</a></td>
-<td>Abstract class that can be used to read Objects from different sources and formats.</td>
-</tr>
-<tr class="odd">
-<td><a href="../../documentation/reference/object_readers.ObjectPartition.html#tiledb.vector_search.object_readers.ObjectPartition">object_readers.ObjectPartition</a></td>
-<td>Abstract class for capturing object partitions</td>
-</tr>
-</tbody>
-</table>
+<section id="tiledb.vector_search.embeddings.ObjectEmbedding.init_kwargs" class="level3">
+<h3 class="anchored" data-anchor-id="tiledb.vector_search.embeddings.ObjectEmbedding.init_kwargs">init_kwargs</h3>
+<p><code>vector_search.embeddings.ObjectEmbedding.init_kwargs()</code></p>
+<p>Returns a dictionary containing kwargs that can be used to re-initialize the ObjectEmbedding.</p>
+<p>This is used to serialize the ObjectEmbedding and pass it as argument to UDF tasks.</p>
+</section>
+<section id="tiledb.vector_search.embeddings.ObjectEmbedding.load" class="level3">
+<h3 class="anchored" data-anchor-id="tiledb.vector_search.embeddings.ObjectEmbedding.load">load</h3>
+<p><code>vector_search.embeddings.ObjectEmbedding.load()</code></p>
+<p>Loads the model in order to be ready for embedding objects.</p>
+<p>This method will be called once per worker to avoid loading the model multiple times.</p>
+</section>
+<section id="tiledb.vector_search.embeddings.ObjectEmbedding.vector_type" class="level3">
+<h3 class="anchored" data-anchor-id="tiledb.vector_search.embeddings.ObjectEmbedding.vector_type">vector_type</h3>
+<p><code>vector_search.embeddings.ObjectEmbedding.vector_type()</code></p>
+<p>Returns the datatype of the embedding vectors.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -690,18 +718,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../documentation/storage-format-spec.html" class="pagination-link" aria-label="Storage Format Spec">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Storage Format Spec</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/edit/main/documentation/reference/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/edit/main/documentation/reference/embeddings.ObjectEmbedding.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

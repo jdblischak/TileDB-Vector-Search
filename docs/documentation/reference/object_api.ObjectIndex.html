@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index</title>
+<title>object_api.objectindex</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../documentation/storage-format-spec.html" rel="prev">
 <link href="../../documentation/assets/tiledb.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/reference/index.html">API Reference</a></li><li class="breadcrumb-item"><a href="../../documentation/reference/index.html">Python</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -164,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/reference/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../documentation/reference/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
@@ -180,95 +213,488 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#python" id="toc-python" class="nav-link active" data-scroll-target="#python">Python</a>
+  <li><a href="#tiledb.vector_search.object_api.ObjectIndex" id="toc-tiledb.vector_search.object_api.ObjectIndex" class="nav-link active" data-scroll-target="#tiledb.vector_search.object_api.ObjectIndex">object_api.ObjectIndex</a>
   <ul class="collapse">
-  <li><a href="#vector-api" id="toc-vector-api" class="nav-link" data-scroll-target="#vector-api">Vector API</a>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
-  <li><a href="#algorithms" id="toc-algorithms" class="nav-link" data-scroll-target="#algorithms">Algorithms</a></li>
+  <li><a href="#tiledb.vector_search.object_api.ObjectIndex.query" id="toc-tiledb.vector_search.object_api.ObjectIndex.query" class="nav-link" data-scroll-target="#tiledb.vector_search.object_api.ObjectIndex.query">query</a></li>
+  <li><a href="#tiledb.vector_search.object_api.ObjectIndex.update_index" id="toc-tiledb.vector_search.object_api.ObjectIndex.update_index" class="nav-link" data-scroll-target="#tiledb.vector_search.object_api.ObjectIndex.update_index">update_index</a></li>
+  <li><a href="#tiledb.vector_search.object_api.ObjectIndex.update_object_reader" id="toc-tiledb.vector_search.object_api.ObjectIndex.update_object_reader" class="nav-link" data-scroll-target="#tiledb.vector_search.object_api.ObjectIndex.update_object_reader">update_object_reader</a></li>
   </ul></li>
-  <li><a href="#object-api" id="toc-object-api" class="nav-link" data-scroll-target="#object-api">Object API</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/edit/main/documentation/reference/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/edit/main/documentation/reference/object_api.ObjectIndex.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/reference/index.html">API Reference</a></li><li class="breadcrumb-item"><a href="../../documentation/reference/index.html">Python</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="python" class="level1">
-<h1>Python</h1>
-<section id="vector-api" class="level2">
-<h2 class="anchored" data-anchor-id="vector-api">Vector API</h2>
+<section id="tiledb.vector_search.object_api.ObjectIndex" class="level1">
+<h1>object_api.ObjectIndex</h1>
+<p><code>vector_search.object_api.ObjectIndex(self, uri, config=None, timestamp=None, open_for_remote_query_execution=False, open_vector_index_for_remote_query_execution=False, load_embedding=True, load_metadata_in_memory=True, environment_variables={}, **kwargs)</code></p>
+<p>An ObjectIndex represents a TileDB Vector Search index that is associated with a user-defined object reader and embedding function. This allows users to easily create and query TileDB Vector Search indexes that are backed by arbitrary data.</p>
+<p>For example, an ObjectIndex can be used to create a TileDB Vector Search index that is backed by a collection of images. The object reader would be responsible for loading the images from disk, and the embedding function would be responsible for generating embeddings for the images.</p>
+<p>Once the ObjectIndex is created, it can be queried using the <code>query()</code> method. The <code>query()</code> method takes a list of query objects and returns a list of the nearest neighbors for each query object.</p>
+<p>The ObjectIndex class also provides methods for updating the index (<code>update_index()</code>) and updating the object reader (<code>update_object_reader()</code>).</p>
+<section id="parameters" class="level2">
+<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 8%">
+<col style="width: 75%">
+<col style="width: 3%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><a href="../../documentation/reference/open.html#tiledb.vector_search.open">open</a></td>
-<td>Factory method that opens a vector index.</td>
+<td><code>uri</code></td>
+<td>str</td>
+<td>The URI of the index.</td>
+<td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><a href="../../documentation/reference/ingestion.html#tiledb.vector_search.ingestion">ingestion</a></td>
-<td>Vector Search ingestion Utilities</td>
+<td><code>config</code></td>
+<td>Optional[Mapping[str, Any]]</td>
+<td>TileDB config dictionary.</td>
+<td><code>None</code></td>
 </tr>
 <tr class="odd">
-<td><a href="../../documentation/reference/index.Index.html#tiledb.vector_search.index.Index">index.Index</a></td>
-<td>Abstract Vector Index class.</td>
+<td><code>timestamp</code></td>
+<td></td>
+<td>Timestamp to open the index at.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>load_embedding</code></td>
+<td>bool</td>
+<td>Whether to load the embedding function into memory.</td>
+<td><code>True</code></td>
+</tr>
+<tr class="odd">
+<td><code>open_for_remote_query_execution</code></td>
+<td>bool</td>
+<td>If <code>True</code>, do not load the embedding model and any index data locally, and instead perform all query functionality in a TileDB Cloud taskgraph.</td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>open_vector_index_for_remote_query_execution</code></td>
+<td>bool</td>
+<td>If <code>True</code>, do not load any index data in main memory locally, and instead load index data and perform vector queries in a TileDB Cloud taskgraph. Compared to <code>open_for_remote_query_execution</code>, this loads the object embedding function and computes query object embeddings locally.</td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>load_metadata_in_memory</code></td>
+<td>bool</td>
+<td>Whether to load the metadata array into memory.</td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>environment_variables</code></td>
+<td>Dict</td>
+<td>Environment variables to set for the object reader and embedding function.</td>
+<td><code>{}</code></td>
+</tr>
+<tr class="odd">
+<td><code>**kwargs</code></td>
+<td></td>
+<td>Keyword arguments to pass to the index constructor.</td>
+<td><code>{}</code></td>
 </tr>
 </tbody>
 </table>
-<section id="algorithms" class="level3">
-<h3 class="anchored" data-anchor-id="algorithms">Algorithms</h3>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><a href="../../documentation/reference/flat_index.html#tiledb.vector_search.flat_index">flat_index</a></td>
-<td>FlatIndex implementation.</td>
+<td><a href="#tiledb.vector_search.object_api.ObjectIndex.query">query</a></td>
+<td>Queries the index and returns the nearest neighbors for each query object.</td>
 </tr>
 <tr class="even">
-<td><a href="../../documentation/reference/ivf_flat_index.html#tiledb.vector_search.ivf_flat_index">ivf_flat_index</a></td>
-<td>IVFFlat Index implementation.</td>
+<td><a href="#tiledb.vector_search.object_api.ObjectIndex.update_index">update_index</a></td>
+<td>Updates the index with new data.</td>
 </tr>
 <tr class="odd">
-<td><a href="../../documentation/reference/vamana_index.html#tiledb.vector_search.vamana_index">vamana_index</a></td>
-<td>Vamana Index implementation.</td>
+<td><a href="#tiledb.vector_search.object_api.ObjectIndex.update_object_reader">update_object_reader</a></td>
+<td>Updates the object reader for the index.</td>
+</tr>
+</tbody>
+</table>
+<section id="tiledb.vector_search.object_api.ObjectIndex.query" class="level3">
+<h3 class="anchored" data-anchor-id="tiledb.vector_search.object_api.ObjectIndex.query">query</h3>
+<p><code>vector_search.object_api.ObjectIndex.query(query_objects, k, query_metadata=None, metadata_array_cond=None, metadata_df_filter_fn=None, return_objects=True, return_metadata=True, driver_mode=Mode.REALTIME, driver_resource_class=None, driver_resources=None, extra_driver_modules=None, driver_access_credentials_name=None, merge_results_result_pos_as_score=True, merge_results_reverse_dist=None, merge_results_per_query_embedding_group_fn=max, merge_results_per_query_group_fn=operator.add, **kwargs)</code></p>
+<p>Queries the index and returns the nearest neighbors for each query object.</p>
+<p>The query objects can be any type of object that is supported by the object reader. For example, if the object reader is configured to read images, then the query objects should be images.</p>
+<p>The <code>k</code> parameter specifies the number of nearest neighbors to return for each query object.</p>
+<p>The <code>query_metadata</code> parameter can be used to pass metadata for the query objects. This metadata will be passed to the embedding function, which can use it to generate embeddings for the query objects.</p>
+<p>The <code>metadata_array_cond</code> parameter can be used to filter the results of the query based on the metadata that is stored in the metadata array. This parameter should be a string that contains a valid TileDB query condition. For example, the following query condition could be used to filter the results to only include objects that have a color attribute that is equal to “red”:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>metadata_array_cond<span class="op">=</span><span class="st">"color='red'"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>metadata_df_filter_fn</code> parameter can be used to filter the results of the query based on the metadata that is stored in the metadata array. This parameter should be a function that takes a pandas DataFrame as input and returns a pandas DataFrame as output. The input DataFrame will contain the metadata for all of the objects that match the query, and the output DataFrame should contain the metadata for the objects that should be returned to the user.</p>
+<p>The <code>return_objects</code> parameter specifies whether to return the objects themselves, or just the object IDs. If this parameter is set to <code>True</code>, then the <code>query()</code> method will also return the objects instead of the object IDs.</p>
+<p>The <code>return_metadata</code> parameter specifies whether to return the metadata for the objects. If this parameter is set to <code>True</code>, then the <code>query()</code> method will also return the object metadata along with the distances and object IDs.</p>
+<section id="parameters-1" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-1">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 68%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>query_objects</code></td>
+<td>np.ndarray</td>
+<td>The query objects.</td>
+<td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><a href="../../documentation/reference/ivf_pq_index.html#tiledb.vector_search.ivf_pq_index">ivf_pq_index</a></td>
-<td>IVFPQ Index implementation.</td>
+<td><code>k</code></td>
+<td>int</td>
+<td>The number of nearest neighbors to return for each query object.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td><code>query_metadata</code></td>
+<td>Optional[OrderedDict]</td>
+<td>Metadata for the query objects.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>metadata_array_cond</code></td>
+<td>Optional[str]</td>
+<td>A TileDB query condition that can be used to filter the results of the query based on the metadata that is stored in the metadata array.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>metadata_df_filter_fn</code></td>
+<td>Optional[str]</td>
+<td>A function that can be used to filter the results of the query based on the metadata that is stored in the metadata array.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>return_objects</code></td>
+<td>bool</td>
+<td>Whether to return the objects themselves, or just the object IDs.</td>
+<td><code>True</code></td>
+</tr>
+<tr class="odd">
+<td><code>return_metadata</code></td>
+<td>bool</td>
+<td>Whether to return the metadata for the objects.</td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>driver_mode</code></td>
+<td>Optional[Mode]</td>
+<td>If not <code>None</code>, the query will be executed in a TileDB cloud taskgraph using the driver mode specified.</td>
+<td><code>Mode.REALTIME</code></td>
+</tr>
+<tr class="odd">
+<td><code>driver_resource_class</code></td>
+<td>Optional[str]</td>
+<td>If <code>driver_mode</code> was <code>REALTIME</code>, the resources class (<code>standard</code> or <code>large</code>) to use for the driver execution.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>driver_resources</code></td>
+<td>Optional[Mapping[str, Any]]</td>
+<td>If <code>driver_mode</code> was <code>BATCH</code>, the resources to use for the driver execution. Example <code>{"cpu": "1", "memory": "4Gi"}</code></td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>extra_driver_modules</code></td>
+<td>Optional[List[str]]</td>
+<td>A list of extra Python modules to install on the driver node.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>driver_access_credentials_name</code></td>
+<td>Optional[str]</td>
+<td>If <code>driver_mode</code> was not <code>None</code>, the access credentials name to use for the driver execution.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>merge_results_result_pos_as_score</code></td>
+<td>bool</td>
+<td>Applies only when there are multiple query embeddings per query. If True, each result score is based on the position of the result for the query embedding.</td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>merge_results_reverse_dist</code></td>
+<td>Optional[bool]</td>
+<td>Applies only when there are multiple query embeddings per query. If True, the distances are reversed based on their reciprocal, (1 / dist).</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>merge_results_per_query_embedding_group_fn</code></td>
+<td>Callable</td>
+<td>Applies only when there are multiple query embeddings per query. Group function used to group together object scores per query embedding (i.e max, min, etc.).</td>
+<td><code>max</code></td>
+</tr>
+<tr class="even">
+<td><code>merge_results_per_query_group_fn</code></td>
+<td>Callable</td>
+<td>Applies only when there are multiple query embeddings per query. Group function used to group together object scores per query (i.e add). This is applied after <code>merge_results_per_query_embedding_group_fn</code></td>
+<td><code>operator.add</code></td>
+</tr>
+<tr class="odd">
+<td><code>**kwargs</code></td>
+<td></td>
+<td>Keyword arguments to pass to the index query method.</td>
+<td><code>{}</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns" class="level4">
+<h4 class="anchored" data-anchor-id="returns">Returns</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Union[</td>
+<td>Tuple[np.ndarray, OrderedDict, Dict], Tuple[np.ndarray, OrderedDict], Tuple[np.ndarray, np.ndarray, Dict], Tuple[np.ndarray, np.ndarray],</td>
+</tr>
+<tr class="even">
+<td>]</td>
+<td>A tuple containing the distances, objects or object IDs, and optionally the object metadata.</td>
 </tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="object-api" class="level2">
-<h2 class="anchored" data-anchor-id="object-api">Object API</h2>
+<section id="tiledb.vector_search.object_api.ObjectIndex.update_index" class="level3">
+<h3 class="anchored" data-anchor-id="tiledb.vector_search.object_api.ObjectIndex.update_index">update_index</h3>
+<p><code>vector_search.object_api.ObjectIndex.update_index(index_timestamp=None, workers=-1, worker_resources=None, worker_image=None, extra_worker_modules=None, driver_resources=None, driver_image=None, extra_driver_modules=None, worker_access_credentials_name=None, max_tasks_per_stage=-1, verbose=False, trace_id=None, embeddings_generation_mode=Mode.LOCAL, embeddings_generation_driver_mode=Mode.LOCAL, vector_indexing_mode=Mode.LOCAL, config=None, namespace=None, environment_variables={}, use_updates_array=True, **kwargs)</code></p>
+<p>Updates the index with new data.</p>
+<p>This method can be used to update the index with new data. This is useful if the data that the index is built on has changed.</p>
+<p>Update uses the <code>ingest_embeddings_with_driver</code> function to add embeddings into a TileDB vector search index.</p>
+<p>This function orchestrates the embedding ingestion process by creating and executing a TileDB Cloud DAG (Directed Acyclic Graph). The DAG consists of two main stages:</p>
+<ol type="1">
+<li><p><strong>Embeddings Generation:</strong> This stage is responsible for computing embeddings for the objects to be indexed.</p></li>
+<li><p><strong>Vector Indexing:</strong> This stage is responsible for ingesting the generated embeddings into the TileDB vector search index.</p></li>
+</ol>
+<p>Both stages can be be executed in one of three modes:</p>
+<ul>
+<li><strong>LOCAL:</strong> Embeddings are ingested locally within the current process.</li>
+<li><strong>REALTIME:</strong> Embeddings are ingested using a TileDB Cloud REALTIME TaskGraph.</li>
+<li><strong>BATCH:</strong> Embeddings are ingested using a TileDB Cloud BATCH TaskGraph.</li>
+</ul>
+<p>The <code>ingest_embeddings_with_driver</code> function provides flexibility in configuring the execution environment for both stages as well as can run the full execution within a driver UDF. Users can specify the number of workers, resources, Docker images, and extra modules for both the driver and worker nodes.</p>
+<p>The <code>update_index()</code> method takes the following parameters:</p>
+<section id="parameters-2" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-2">Parameters</h4>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 60%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><a href="../../documentation/reference/object_api.create.html#tiledb.vector_search.object_api.create">object_api.create</a></td>
-<td>Creates a new ObjectIndex.</td>
+<td><code>index_timestamp</code></td>
+<td>int</td>
+<td>Timestamp to use for the update to take place at.</td>
+<td><code>None</code></td>
 </tr>
 <tr class="even">
-<td><a href="../../documentation/reference/object_api.ObjectIndex.html#tiledb.vector_search.object_api.ObjectIndex">object_api.ObjectIndex</a></td>
-<td>An ObjectIndex represents a TileDB Vector Search index that is associated with a</td>
+<td><code>workers</code></td>
+<td>int</td>
+<td>The number of workers to use for the update. If this parameter is not specified, then the default number of workers will be used.</td>
+<td><code>-1</code></td>
 </tr>
 <tr class="odd">
-<td><a href="../../documentation/reference/embeddings.ObjectEmbedding.html#tiledb.vector_search.embeddings.ObjectEmbedding">embeddings.ObjectEmbedding</a></td>
-<td>Abstract class that can be used to create embeddings for Objects of a specific format.</td>
+<td><code>worker_resources</code></td>
+<td>Dict</td>
+<td>The resources to use for each worker.</td>
+<td><code>None</code></td>
 </tr>
 <tr class="even">
-<td><a href="../../documentation/reference/object_readers.ObjectReader.html#tiledb.vector_search.object_readers.ObjectReader">object_readers.ObjectReader</a></td>
-<td>Abstract class that can be used to read Objects from different sources and formats.</td>
+<td><code>worker_image</code></td>
+<td>str</td>
+<td>The Docker image to use for each worker.</td>
+<td><code>None</code></td>
 </tr>
 <tr class="odd">
-<td><a href="../../documentation/reference/object_readers.ObjectPartition.html#tiledb.vector_search.object_readers.ObjectPartition">object_readers.ObjectPartition</a></td>
-<td>Abstract class for capturing object partitions</td>
+<td><code>extra_worker_modules</code></td>
+<td>Optional[List[str]]</td>
+<td>Extra modules to install on the worker nodes.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>driver_resources</code></td>
+<td>Dict</td>
+<td>The resources to use for the driver.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>driver_image</code></td>
+<td>str</td>
+<td>The Docker image to use for the driver.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>extra_driver_modules</code></td>
+<td>Optional[List[str]]</td>
+<td>Extra modules to install on the driver node.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>worker_access_credentials_name</code></td>
+<td>str</td>
+<td>The name of the TileDB Cloud access credentials to use for the workers.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>max_tasks_per_stage</code></td>
+<td>int</td>
+<td>The maximum number of tasks to run per stage.</td>
+<td><code>-1</code></td>
+</tr>
+<tr class="odd">
+<td><code>verbose</code></td>
+<td>bool</td>
+<td>Whether to print verbose output.</td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>trace_id</code></td>
+<td>Optional[str]</td>
+<td>The trace ID to use for the update.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>embeddings_generation_mode</code></td>
+<td>Mode</td>
+<td>The mode to use for generating embeddings.</td>
+<td><code>Mode.LOCAL</code></td>
+</tr>
+<tr class="even">
+<td><code>embeddings_generation_driver_mode</code></td>
+<td>Mode</td>
+<td>The mode to use for the driver of the embeddings generation task.</td>
+<td><code>Mode.LOCAL</code></td>
+</tr>
+<tr class="odd">
+<td><code>vector_indexing_mode</code></td>
+<td>Mode</td>
+<td>The mode to use for indexing the vectors.</td>
+<td><code>Mode.LOCAL</code></td>
+</tr>
+<tr class="even">
+<td><code>config</code></td>
+<td>Optional[Mapping[str, Any]]</td>
+<td>TileDB config dictionary.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>namespace</code></td>
+<td>Optional[str]</td>
+<td>The TileDB Cloud namespace to use for the update. If this parameter is not specified, then the default namespace will be used.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>environment_variables</code></td>
+<td>Dict</td>
+<td>Environment variables to set for the object reader and embedding function.</td>
+<td><code>{}</code></td>
+</tr>
+<tr class="odd">
+<td><code>**kwargs</code></td>
+<td></td>
+<td>Keyword arguments to pass to the ingestion function.</td>
+<td><code>{}</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="tiledb.vector_search.object_api.ObjectIndex.update_object_reader" class="level3">
+<h3 class="anchored" data-anchor-id="tiledb.vector_search.object_api.ObjectIndex.update_object_reader">update_object_reader</h3>
+<p><code>vector_search.object_api.ObjectIndex.update_object_reader(object_reader, config=None)</code></p>
+<p>Updates the object reader for the index.</p>
+<p>This method can be used to update the object reader for the index. This is useful if the object reader needs to be updated to read objects from a different location, or if the object reader needs to be updated to read objects in a different format.</p>
+<section id="parameters-3" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-3">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 37%">
+<col style="width: 30%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>object_reader</code></td>
+<td>ObjectReader</td>
+<td>The new object reader.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>config</code></td>
+<td>Optional[Mapping[str, Any]]</td>
+<td>TileDB config dictionary.</td>
+<td><code>None</code></td>
 </tr>
 </tbody>
 </table>
 
 
+</section>
+</section>
 </section>
 </section>
 
@@ -690,18 +1116,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../documentation/storage-format-spec.html" class="pagination-link" aria-label="Storage Format Spec">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Storage Format Spec</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/edit/main/documentation/reference/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/edit/main/documentation/reference/object_api.ObjectIndex.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/TileDB-Inc/TileDB-Vector-Search/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
